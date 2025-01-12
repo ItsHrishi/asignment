@@ -60,25 +60,21 @@ const TagInput = <T extends FieldValues>({
                 const container = containerRef.current;
                 const containerWidth = container.offsetWidth;
 
-                // Get all elements except the input
                 const tags = Array.from(container.children).filter(child =>
                     child !== inputRef.current
                 );
 
-                // Calculate total width of all tags
                 const tagsWidth = tags.reduce((width, child) => {
-                    return width + child.getBoundingClientRect().width + 8; // 8px for gap
+                    return width + child.getBoundingClientRect().width + 8;
                 }, 0);
 
-                // If there are no tags, use full width (minus padding)
                 if (tagsWidth === 0) {
-                    inputRef.current.style.width = `${containerWidth - 24}px`; // 24px for container padding
+                    inputRef.current.style.width = `${containerWidth - 24}px`;
                     return;
                 }
 
-                // If there are tags, calculate remaining width
                 const availableWidth = containerWidth - tagsWidth - 24;
-                const minWidth = Math.min(120, containerWidth - 24); // minimum width or container width
+                const minWidth = Math.min(120, containerWidth - 24);
 
                 inputRef.current.style.width = `${Math.max(minWidth, availableWidth)}px`;
             }

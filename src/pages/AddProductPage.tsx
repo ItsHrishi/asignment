@@ -178,10 +178,9 @@ const AddProductPage = () => {
 
 
 
-
+    // Trigger the hidden file input click
     const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.preventDefault()
-        // Trigger the hidden file input click
+        e.preventDefault();
         fileInputRef.current?.click();
     };
 

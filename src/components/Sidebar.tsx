@@ -30,7 +30,7 @@ const Sidebar = () => {
     return (
         <div className="md:w-64 bg-white h-screen border-r w-20">
             <div className="h-full flex flex-col md:px-4 px-2">
-                {/* Top content section */}
+                {/* main content */}
                 <div className="flex-grow">
                     <div className="my-4 flex">
                         <img
@@ -59,7 +59,7 @@ const Sidebar = () => {
                     </nav>
                 </div>
 
-                {/* User Profile - will stay at bottom */}
+                {/* user profile*/}
                 <div className="py-4 border-t mt-auto">
                     <div className="flex items-center">
                         <img
