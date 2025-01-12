@@ -15,7 +15,6 @@ A modern React-based product management dashboard that allows users to manage pr
 - Modern UI
   - Responsive design
   - Clean and intuitive interface
-  - Dark/light mode support
 
 ## Tech Stack
 
