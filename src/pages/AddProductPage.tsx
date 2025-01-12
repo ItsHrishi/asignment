@@ -249,14 +249,14 @@ const AddProductPage = () => {
                                         <label className="block pl-1 font-light text-sm mb-1">Category *</label>
                                         <select
                                             {...field}
-                                            className={`appearance-none px-3 py-2 rounded-lg bg-white text-gray-900 text-sm outline-none duration-200 border focus:ring-2 focus:ring-primaryBlue w-full ${errors.category ? "border-red-500" : "border-gray-200"
+                                            className={`appearance-none px-3 py-2 cursor-pointer rounded-lg bg-white text-gray-900 text-sm outline-none duration-200 border focus:ring-2 focus:ring-primaryBlue w-full ${errors.category ? "border-red-500" : "border-gray-200"
                                                 }`}
                                         >
                                             <option value="" disabled>
                                                 Select a category
                                             </option>
                                             {categories.map((category) => (
-                                                <option key={category.id} value={category.id}>
+                                                <option key={category.id} value={category.id} >
                                                     {category.name}
                                                 </option>
                                             ))}
