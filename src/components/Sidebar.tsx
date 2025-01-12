@@ -31,7 +31,7 @@ const Sidebar = () => {
         { name: "Settings", icon: Settings, path: "/settings" },
     ];
 
-    console.log("render check : ")
+    // console.log("render check : ")
     useEffect(() => {
         const currentPath = location.pathname;
         const activeItem = sidebarItems.find((item) => item.path === currentPath);
