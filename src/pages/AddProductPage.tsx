@@ -491,38 +491,51 @@ const AddProductPage = () => {
             // step 4 : 
             case 3:
                 return (
-                    <div>
-                        <Controller
-                            name="price"
-                            control={control}
-                            rules={{ required: "Price is required" }}
-                            render={({ field }) => (
-                                <Input
-                                    {...field}
-                                    type="number"
-                                    label="Price *"
-                                    placeholder="Enter product price"
-                                    className={errors.price && "border-red-500"}
-                                    value={field.value ?? ""}
-                                />
+                    <div className="flex flex-col gap-4">
+                        <div>
+                            <Controller
+                                name="price"
+                                control={control}
+                                rules={{ required: "Price is required" }}
+                                render={({ field }) => (
+                                    <Input
+                                        {...field}
+                                        type="number"
+                                        label="Price *"
+                                        placeholder="Enter product price"
+                                        className={errors.price && "border-red-500"}
+                                        value={field.value ?? 0}
+                                    />
+                                )}
+                            />
+                            {errors.price && (
+                                <p className="text-red-500 text-xs my-1 ml-1">{errors.price.message}</p>
                             )}
-                        />
-                        {errors.price && (
-                            <p className="text-red-500 text-sm mt-1">{errors.price.message}</p>
-                        )}
+                        </div>
 
                         <div className="flex flex-row gap-2 items-center justify-between h-full">
                             <Controller
                                 name="discountValue"
                                 control={control}
+                                defaultValue={0}
                                 render={({ field }) => (
-                                    <Input
-                                        {...field}
-                                        type="number"
-                                        label="Discount"
-                                        placeholder="Enter discount value"
-                                        className={errors.discountValue && "border-red-500"}
-                                    />
+                                    <div className="w-full font-light text-sm">
+                                        <label className="inline-block mb-1 pl-1">
+                                            Discount
+                                        </label>
+                                        <input
+                                            type="number"
+                                            {...field}
+                                            value={field.value || 0}
+                                            onChange={(e) => {
+                                                const value = e.target.value === '' ? 0 : Number(e.target.value);
+                                                field.onChange(value);
+                                            }}
+                                            className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primaryBlue"
+                                            placeholder="Enter discount value"
+                                            min={0}
+                                        />
+                                    </div>
                                 )}
                             />
                             <div className="flex items-center space-x-2 border rounded-md mt-auto ">
