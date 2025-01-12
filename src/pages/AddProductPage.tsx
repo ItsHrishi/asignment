@@ -117,7 +117,7 @@ const AddProductPage = () => {
 
             }
             dispatch(addProduct(productData));
-            navigate("/");
+            navigate("/products");
         }
     })
 
@@ -570,9 +570,9 @@ const AddProductPage = () => {
         <div className="flex flex-col h-full">
 
             <header className="flex justify-between items-center px-4 pt-4 pb-2 bg-white">
-                <h2 className="text-xl font-medium">Products</h2>
+                <h2 className="text-xl font-medium">Add Products</h2>
                 <div className="space-x-4 flex">
-                    {currentStep === 0 ? <Button className="w-28" variant="soft" onClick={() => navigate("/")} >
+                    {currentStep === 0 ? <Button className="w-28" variant="soft" onClick={() => navigate("/products")} >
                         Cancel
                     </Button> :
                         <Button className="w-28" variant="soft" onClick={handleBack}>Back</Button>
