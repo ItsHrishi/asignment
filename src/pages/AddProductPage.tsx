@@ -117,9 +117,7 @@ const AddProductPage = () => {
 
             }
             dispatch(addProduct(productData));
-            navigate("/")
-            alert("Form submitted successfully!");
-
+            navigate("/");
         }
     })
 
